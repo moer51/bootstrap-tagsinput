@@ -301,6 +301,7 @@
             self.add(this.map[text]);
           },
           matcher: function (text) {
+            if (typeahead.matcher)  return typeahead.matcher(text);
             return (text.toLowerCase().indexOf(this.query.trim().toLowerCase()) !== -1);
           },
           sorter: function (texts) {
